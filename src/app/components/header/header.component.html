@@ -8,7 +8,11 @@
         </div>
         <div class="navbar">
             <button>
-                <img src="./assets/lente-ingrandimento.svg" alt="navbar" width="30px" height="40px" id="nav-icon">
+                @if (navbarIsNotVisible) {
+                    <img src="./assets/lente-ingrandimento.svg" alt="navbar" width="30px" height="40px" id="nav-icon" (click)="showNavbar()">
+                } @else {
+                    <input type="text" (focusout)="showNavbar()">
+                }
             </button>
             <div class="dropdown">
                 <img src="./assets/fotoProva.png" alt="img" width="40px" height="40px" id="pic-icon">

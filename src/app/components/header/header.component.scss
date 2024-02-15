@@ -12,6 +12,7 @@
     a {
         display: flex;
         flex: 20%;
+        text-decoration: none;
         img {
         margin: 17px 7px 0px 16px;
         }
@@ -31,6 +32,12 @@
         border-style: none;
         img {
             transition: 0.2s;
+            cursor: pointer;
+        }
+        input{
+            outline: none;
+            cursor: text;
+            border-style: none;
         }
     }
     button:hover {
@@ -47,6 +54,7 @@
         border: 2px solid rgba(255, 71, 215, 0.507);
         margin-inline-end: 30px;
         transition: 0.2s;
+        cursor: pointer;
     }
     #pic-icon:hover {
         border: 2px solid rgb(63, 63, 63);
