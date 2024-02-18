@@ -1,0 +1,26 @@
+<div class="container">
+    <form id="createEventForm" name="createEventForm" #addEventForm="ngForm" (ngSubmit)="sendForm(addEventForm)">
+        <div class="inputs">
+            <input type="text" ngModel placeholder="Give this event a name" name="eventName" required maxlength="20">
+            <input type="text" ngModel placeholder="Something about this event?" name="eventBio" required>
+            <input type="date" ngModel placeholder="When?" name="eventDate" required>
+            <input type="number" ngModel placeholder="Price?" name="eventPrice" required>
+            <input type="file" ngModel placeholder="Give to your event an iconic pic" alt="eventPic" name="eventPic" accept="image" required>
+            <div class="checkbox">
+                <label for="eventOrg">
+                    <p>Check if you want to display the organiser: </p>
+                </label>
+                <input type="checkbox" ngModel placeholder="Do you want to display your name?" name="eventOrg" id="eventOrg" required >
+                <img src="assets/expl.svg" alt="explImage" title="
+                Eventino is a free place where you can actually create any event you want
+and you don't have to display who is the organiser. 
+Check if you want to not dispaly in any place that you are going to organise it!
+                                        We value your privacy :)">
+            </div>
+        </div>
+        <div class="buttons">
+            <input type="submit">
+            <input type="button" id="goBackButton" value="Annulla" routerLink="/home">
+        </div>
+    </form>
+</div>

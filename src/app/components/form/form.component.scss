@@ -1,0 +1,48 @@
+.container {
+    margin-block-start: 50px;
+    margin-block-end: 50px;
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    .inputs {
+        display: flex;
+        flex-direction: column;
+        padding: 50px 50px 20px 50px;
+        input {
+            margin: 10px 0 10px 0;
+            padding: 20px;
+            font-family: sans-serif;
+        }
+        .checkbox {
+            display: flex;
+            p {
+                color: rgb(46, 46, 46);
+            }
+            #eventOrg {
+                cursor: pointer;
+                margin: 0 0 0 10px;
+            }
+            img {
+                width: 20px;
+                height: 20px;
+                margin: 15px 0px 0 5px;
+            }
+        }
+    }
+    .buttons {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        input {
+            padding: 10px;
+            border-radius: 10px;
+            margin: 0 0 5px 0;
+            outline: none;
+            cursor: pointer;
+        }
+        #goBackButton {
+            padding: 7px;
+            background-color: rgb(255, 87, 87);
+        }
+    }
+}
