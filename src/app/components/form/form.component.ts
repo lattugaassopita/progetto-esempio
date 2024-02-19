@@ -14,9 +14,12 @@ export class FormComponent {
 event: Event =  {eventName: '', eventBio: '', eventPrice: 0, eventOrg: false}
 
 
-  sendForm(form:NgForm) {
+  sendForm(form:NgForm, event: Event) {
     console.log("sendForm() is working");
+    console.log(form)
     console.log(form.value);
+    console.log(event);
+    console.log(event.eventName);
   }
 
 }

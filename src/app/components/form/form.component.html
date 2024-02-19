@@ -1,25 +1,34 @@
 <div class="container">
-    <form id="createEventForm" name="createEventForm" #addEventForm="ngForm" (ngSubmit)="sendForm(addEventForm)" 
-    [ngClass]="{'errorBorder': addEventForm.touched && addEventForm.invalid && addEventForm.pristine}">
+    <form id="createEventForm" name="createEventForm" #addEventForm="ngForm" (ngSubmit)="sendForm(addEventForm, event)">
         <div class="inputs">
-            <input type="text" ngModel placeholder="Give this event a name" name="event.eventName" required maxlength="20">
-            <!-- <p>
-                @if (addEventForm.controls['event.eventName'].valid) {
+            <input type="text" [(ngModel)]="event.eventName" placeholder="Give this event a name" name="event.eventName" required maxlength="20"
+            [ngClass]="{'errorBorder': !event.eventName}">
+            <p class="errorMsg">
+                @if (!event.eventName) {
                     Please give your event a name!
                 }
-            </p> -->
-            <input type="text" ngModel placeholder="Something about this event?" name="event.eventBio" required>
-            <!-- <p></p> -->
-            <input type="date" ngModel placeholder="When?" name="event.eventDate" required>
-            <!-- <p></p> -->
-            <input type="number" ngModel placeholder="Price?" name="event.eventPrice" required>
-            <!-- <p></p> -->
-            <input type="file" ngModel placeholder="Give to your event an iconic pic" alt="eventPic" name="event.eventPic" accept="image">
+            </p>
+            <input type="text" [(ngModel)]="event.eventBio" placeholder="Something about this event?" name="event.eventBio">
+            <input type="date" [(ngModel)]="event.eventDate" name="event.eventDate" required
+            [ngClass]="{'errorBorder': !event.eventDate}">
+            <p class="errorMsg">
+                @if (!event.eventDate) {
+                    Please give your event a date!
+                }
+            </p>
+            <input type="number" [(ngModel)]="event.eventPrice" placeholder="Price?" name="event.eventPrice" required
+            [ngClass]="{'errorBorder': !event.eventPrice}">
+            <p class="errorMsg">
+                @if (!event.eventPrice) {
+                    Please give your event a price!
+                }
+            </p>
+            <input type="file" [(ngModel)]="event.eventPic" placeholder="Give to your event an iconic pic" alt="eventPic" name="event.eventPic" accept="image">
             <div class="checkbox">
                 <label for="eventOrg">
                     <p>Check if you want to display the organiser: </p>
                 </label>
-                <input type="checkbox" ngModel placeholder="Do you want to display your name?" name="event.eventOrg" id="eventOrg" required >
+                <input type="checkbox" [(ngModel)]="event.eventOrg" placeholder="Do you want to display your name?" name="event.eventOrg" id="eventOrg" required >
                 <img src="assets/expl.svg" alt="explImage" title="
                 Eventino is a free place where you can actually create any event you want
 and you don't have to display who is the organiser. 
