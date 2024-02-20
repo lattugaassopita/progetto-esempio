@@ -1,34 +1,47 @@
 <div class="container">
     <form id="createEventForm" name="createEventForm" #addEventForm="ngForm" (ngSubmit)="sendForm(addEventForm, event)">
         <div class="inputs">
-            <input type="text" [(ngModel)]="event.eventName" placeholder="Give this event a name" name="event.eventName" required maxlength="20"
-            [ngClass]="{'errorBorder': !event.eventName}">
-            <p class="errorMsg">
-                @if (!event.eventName) {
-                    Please give your event a name!
+            <input type="text" [(ngModel)]="event.eventName" placeholder="Give this event a name" name="eventName"
+                id="eventName" required maxlength="20" [ngClass]="{'errorBorder': addEventForm.controls['eventName'] && addEventForm.controls['eventName'].invalid && addEventForm.controls['eventName'].touched,
+                'greenBorder': addEventForm.controls['eventName'] && addEventForm.controls['eventName'].valid}">
+            <div>
+                @if (addEventForm.controls['eventName'] && addEventForm.controls['eventName'].invalid &&
+                addEventForm.controls['eventName'].touched) {
+                <img src="assets/excl-point.svg" alt="excl-point" width="20px" height="20px" title="Name?">
+                } @else if (addEventForm.controls['eventName'] && addEventForm.controls['eventName'].valid) {
+                <img src="assets/done-icon.svg" alt="done-icon" width="20px" height="20px">
                 }
-            </p>
-            <input type="text" [(ngModel)]="event.eventBio" placeholder="Something about this event?" name="event.eventBio">
-            <input type="date" [(ngModel)]="event.eventDate" name="event.eventDate" required
-            [ngClass]="{'errorBorder': !event.eventDate}">
-            <p class="errorMsg">
-                @if (!event.eventDate) {
-                    Please give your event a date!
+            </div>
+            <input type="text" [(ngModel)]="event.eventBio" placeholder="Something about this event?" name="eventBio">
+            <input type="date" [(ngModel)]="event.eventDate" name="eventDate" required [ngClass]="{'errorBorder': addEventForm.controls['eventDate'] && addEventForm.controls['eventDate'].invalid && addEventForm.controls['eventDate'].touched,
+                'greenBorder': addEventForm.controls['eventDate'] && addEventForm.controls['eventDate'].valid}">
+            <div>
+                @if (addEventForm.controls['eventDate'] && addEventForm.controls['eventDate'].invalid &&
+                addEventForm.controls['eventDate'].touched) {
+                <img src="assets/excl-point.svg" alt="excl-point" width="20px" height="20px" title="When?">
+                } @else if (addEventForm.controls['eventDate'] && addEventForm.controls['eventDate'].valid) {
+                <img src="assets/done-icon.svg" alt="done-icon" width="20px" height="20px">
                 }
-            </p>
-            <input type="number" [(ngModel)]="event.eventPrice" placeholder="Price?" name="event.eventPrice" required
-            [ngClass]="{'errorBorder': !event.eventPrice}">
-            <p class="errorMsg">
-                @if (!event.eventPrice) {
-                    Please give your event a price!
+            </div>
+            <input type="number" [(ngModel)]="event.eventPrice" placeholder="Price?" name="eventPrice" required
+                [ngClass]="{'errorBorder': addEventForm.controls['eventPrice'] && addEventForm.controls['eventPrice'].invalid && addEventForm.controls['eventPrice'].touched,
+            'greenBorder': addEventForm.controls['eventPrice'] && addEventForm.controls['eventPrice'].valid}">
+            <div>
+                @if (addEventForm.controls['eventPrice'] && addEventForm.controls['eventPrice'].invalid &&
+                addEventForm.controls['eventPrice'].touched) {
+                <img src="assets/excl-point.svg" alt="excl-point" width="20px" height="20px" title="How much?">
+                } @else if (addEventForm.controls['eventPrice'] && addEventForm.controls['eventPrice'].valid) {
+                <img src="assets/done-icon.svg" alt="done-icon" width="20px" height="20px">
                 }
-            </p>
-            <input type="file" [(ngModel)]="event.eventPic" placeholder="Give to your event an iconic pic" alt="eventPic" name="event.eventPic" accept="image">
+            </div>
+            <input type="file" [(ngModel)]="event.eventPic" placeholder="Give to your event an iconic pic"
+                alt="eventPic" name="eventPic" accept="image">
             <div class="checkbox">
                 <label for="eventOrg">
                     <p>Check if you want to display the organiser: </p>
                 </label>
-                <input type="checkbox" [(ngModel)]="event.eventOrg" placeholder="Do you want to display your name?" name="event.eventOrg" id="eventOrg" required >
+                <input type="checkbox" [(ngModel)]="event.eventOrg" placeholder="Do you want to display your name?"
+                    name="eventOrg" id="eventOrg" required>
                 <img src="assets/expl.svg" alt="explImage" title="
                 Eventino is a free place where you can actually create any event you want
 and you don't have to display who is the organiser. 
