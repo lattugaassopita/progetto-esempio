@@ -1,0 +1,120 @@
+.container {
+    margin: -8px -8px 0 -8px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    header {
+        // background-color: rgb(97, 255, 97);
+        background-image: url("/assets/background-header.jpg");
+        padding: 5px 5px 5px 5px;
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            justify-content: space-between;
+            align-items: center;
+            margin-inline-start: 50px;
+            margin-inline-end: 50px;
+
+            .left-side {
+                flex: 50%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-content: center;
+                justify-content: flex-start;
+                align-items: flex-end;
+
+                .logo {
+                    flex: 10%;
+
+                    img {
+                        width: 190px;
+                        height: 65px;
+                    }
+                }
+
+                .routerList {
+                    flex: 90%;
+                    margin: 0 0 0 0;
+                    padding: 0 0 0 0;
+                    
+                    ul {
+                        list-style: none;
+                        display: flex;
+
+                        li {
+                            display: block;
+                            text-align: start;
+                            margin: 0 15px 0 15px;
+                            color: whitesmoke;
+                        }
+
+                        li:hover {
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+            .right-side {
+                flex: 50%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-content: center;
+                justify-content: flex-end;
+                align-items: flex-end;
+
+                .navbar {
+
+                    button {
+                        border: none;
+                        background-color: transparent;
+                        margin-inline-end: 50px;
+                        margin-block-end: 10px;
+
+                        img {
+                            width: 30px;
+                            height: 30px;
+                            transition: 0.2s;
+                        }
+
+                        img:hover {
+                            width: 35px;
+                            height: 35px;
+                        }
+                    }
+
+                    input {
+                        margin-inline-end: 50px;
+                        margin-block-end: 10px;
+                        width: 500px;
+                        padding: 10px;
+                        border-radius: 100px;
+                        outline: none;
+                        border: none;
+                    }
+                }
+
+                .profile {
+
+                    img {
+                        border-radius: 50px;
+                        border: 2px solid #b0b0b0;
+                        transition: 0.2s;
+                    }
+
+                    img:hover {
+                        border: 2px solid #636363;
+                    }
+                }
+            }
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+}
+

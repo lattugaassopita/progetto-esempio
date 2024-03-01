@@ -1,0 +1,19 @@
+.container {
+    background-image: url("/assets/background-header.jpg");
+    width: 300px;
+    border-radius: 30px;
+    margin: 5px 0 0 0;
+    border: 2px solid green;
+
+    .list {
+        padding: 15px 30px 15px 30px;
+
+        p {
+            color: #cdcdcd;
+        }
+
+        p:hover {
+            color: whitesmoke;
+        }
+    }
+}
