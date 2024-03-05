@@ -1,0 +1,24 @@
+.container {
+    margin: -8px;
+
+    footer {
+        .copyright {
+            background-color: black;
+            padding: 5px 0 5px 0;
+
+            p {
+                color: rgb(213, 213, 213);
+                text-align: center;
+                a {
+                    text-decoration: none;
+                    color: rgb(213, 213, 213);
+                }
+
+                a:hover {
+                    color: whitesmoke;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
