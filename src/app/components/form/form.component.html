@@ -1,19 +1,19 @@
 <div class="container">
-    <form action="get" ngForm="addEventForm" (ngSubmit)="ciao()">
+    <form action="get" ngForm="addEventForm" #addEventForm="ngForm" (ngSubmit)="ciao(addEventForm)">
         <div class="input-group">
-            <input type="text" name="name" id="name" placeholder="Write your event name">
-            <textarea name="bio" id="bio" cols="20" rows="16" placeholder="Write something about your event..." ngModel></textarea>
-            <input type="number" name="price" id="price" ngModel>
-            <input type="date" name="date" id="date" ngModel>
-            <input type="text" name="place" id="place" placeholder="Where?" ngModel>
+            <input type="text" required name="name" id="name" placeholder="Write your event name" [(ngModel)]="event.name">
+            <textarea name="bio" required id="bio" cols="20" rows="16" placeholder="Write something about your event..." ngModel [(ngModel)]="event.bio"></textarea>
+            <input type="number" required name="price" id="price" ngModel [(ngModel)]="event.price">
+            <input type="date" required name="date" id="date" ngModel [(ngModel)]="event.date">
+            <input type="text" required name="place" id="place" placeholder="Where?" ngModel [(ngModel)]="event.place">
         </div>
         <div class="checkbox">
             <label>Do you want to show up who is the organiser?</label>
-            <input type="checkbox" name="organiser" id="organiser" value="organiser" ngModel>
+            <input type="checkbox" required name="organiser" id="organiser" value="organiser" ngModel [(ngModel)]="event.organiser">
         </div>
         <div class="checkbox">
             <label>Do you accept Eventino's rules?</label>
-            <input type="checkbox" name="rules" id="rules" value="rules" ngModel>
+            <input type="checkbox" required name="rules" id="rules" value="rules" ngModel [(ngModel)]="event.rules">
         </div>
         <div class="button-group">
             <input type="submit" value="Create your event" id="submitButton">

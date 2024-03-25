@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -12,8 +12,11 @@ import { RouterModule } from '@angular/router';
 })
 export class FormComponent {
 
-  ciao() {
+  event = {name: '', bio: '', price: 0, date: Date, place: '', organiser: false, rules: false}
+
+  ciao(form: NgForm) {
     console.log("NgSubmit is working");
+    console.log("the form contain:", form.value)
   }
 
 }
