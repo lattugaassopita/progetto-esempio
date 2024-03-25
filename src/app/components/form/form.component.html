@@ -1,15 +1,19 @@
 <div class="container">
-    <form action="">
+    <form action="get" ngForm="addEventForm" (ngSubmit)="ciao()">
         <div class="input-group">
-            <input type="text" name="name" id="name">
-            <textarea name="bio" id="bio" cols="20" rows="16" placeholder="Write something about your event..."></textarea>
-            <input type="number" name="price" id="price">
-            <input type="date" name="date" id="date">
-            <input type="text" name="place" id="place">
+            <input type="text" name="name" id="name" placeholder="Write your event name">
+            <textarea name="bio" id="bio" cols="20" rows="16" placeholder="Write something about your event..." ngModel></textarea>
+            <input type="number" name="price" id="price" ngModel>
+            <input type="date" name="date" id="date" ngModel>
+            <input type="text" name="place" id="place" placeholder="Where?" ngModel>
         </div>
         <div class="checkbox">
-            <p>Do you want to show up who is the organiser?</p>
-            <input type="checkbox" name="organiser" id="organiser">
+            <label>Do you want to show up who is the organiser?</label>
+            <input type="checkbox" name="organiser" id="organiser" value="organiser" ngModel>
+        </div>
+        <div class="checkbox">
+            <label>Do you accept Eventino's rules?</label>
+            <input type="checkbox" name="rules" id="rules" value="rules" ngModel>
         </div>
         <div class="button-group">
             <input type="submit" value="Create your event" id="submitButton">
