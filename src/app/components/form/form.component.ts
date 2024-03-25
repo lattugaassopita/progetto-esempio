@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
 })
 export class FormComponent {
 
-  event = {name: '', bio: '', price: 0, date: Date, place: '', organiser: false, rules: false}
+  event = {name: '', bio: '', price: '', date: Date, place: '', organiser: false, rules: false}
 
   ciao(form: NgForm) {
     console.log("NgSubmit is working");
